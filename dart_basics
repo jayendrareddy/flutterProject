@@ -1,0 +1,221 @@
+1. Variables in Dart
+Variables store data.
+void main() {
+  String name = 'Anu';
+  int age = 26;
+  double salary = 37330.50;
+  bool isDeveloper = true;
+
+  print(name);
+  print(age);
+  print(salary);
+  print(isDeveloper);
+}
+
+
+Data type	Used for	Example
+String	Text	'Hello'
+int	Whole numbers	25
+double	Decimal numbers	25.5
+bool	True or false	true
+List	Multiple values	[10, 20, 30]
+Map	Key-value pairs	{'name': 'Anu'}
+
+2. var, final and const
+var city = 'Hyderabad';
+city = 'Vijayawada';
+
+final currentYear = 2026;
+const pi = 3.14159;
+
+
+- var: Dart infers the type; you can change the value to another value of the same type.
+- final: Assign the value only once.
+- const: A compile-time constant.
+3. Operators
+void main() {
+  int a = 10;
+  int b = 5;
+
+  print(a + b); // 15
+  print(a - b); // 5
+  print(a * b); // 50
+  print(a / b); // 2.0
+  print(a > b); // true
+  print(a == b); // false
+}
+
+
+Common operators:
+- Arithmetic: +, -, *, /, %
+- Comparison: >, <, >=, <=, ==, !=
+- Logical: && (AND), || (OR), ! (NOT)
+4. Conditions: if, else
+Conditions allow your program to make decisions.
+void main() {
+  int age = 20;
+
+  if (age >= 18) {
+    print('Eligible to vote');
+  } else {
+    print('Not eligible to vote');
+  }
+}
+
+
+In Flutter, conditions can also determine which widget to display.
+isLoggedIn
+    ? const Text('Welcome')
+    : const Text('Please login');
+
+
+This is called the ternary operator.
+5. Loops
+Loops repeat a block of code.
+
+For loop
+void main() {
+  for (int i = 1; i <= 5; i++) {
+    print(i);
+  }
+}
+
+
+Output: 1 2 3 4 5
+
+While loop
+void main() {
+  int i = 1;
+
+  while (i <= 3) {
+    print(i);
+    i++;
+  }
+}
+
+
+Use a for loop when you know how many times to repeat something, and a while loop when repetition depends on a condition.
+6. Functions
+A function is a reusable block of code.
+void greet() {
+  print('Hello!');
+}
+
+int add(int a, int b) {
+  return a + b;
+}
+
+void main() {
+  greet();
+
+  int result = add(10, 20);
+  print(result);
+}
+
+
+Output:
+Hello!
+30
+
+
+- void means the function doesn't return a value.
+- int means the function returns an integer.
+- return sends a result back to the caller.
+7. Lists
+A List stores multiple values in order.
+void main() {
+  List<String> fruits = ['Apple', 'Mango', 'Banana'];
+
+  print(fruits[0]); // Apple
+
+  fruits.add('Orange');
+  fruits.remove('Mango');
+
+  print(fruits);
+  print(fruits.length);
+}
+
+
+Remember: list indexes start at 0.
+
+In Flutter, lists are useful for displaying employees, patients, attendance records and other repeated data.
+8. Maps
+A Map stores data as key-value pairs. It's commonly used when handling JSON API responses.
+void main() {
+  Map<String, dynamic> employee = {
+    'name': 'Anu',
+    'age': 26,
+    'isActive': true,
+  };
+
+  print(employee['name']);
+  print(employee['age']);
+}
+
+
+Here, String represents the key type, and dynamic allows values of different types.
+9. Null safety
+Dart distinguishes between values that can be null and values that cannot.
+String name = 'Anu';
+
+String? nickname;
+
+nickname = 'Anu';
+
+print(name);
+print(nickname);
+
+
+- String name: cannot contain null.
+- String? nickname: can contain null.
+Useful operators:
+String? name;
+
+print(name ?? 'Guest');
+
+
+The ?? operator provides a fallback when the value is null.
+10. Classes and objects
+Classes are important for understanding Flutter architecture and MVVM.
+class Employee {
+  String name;
+  int age;
+
+  Employee(this.name, this.age);
+
+  void display() {
+    print('Name: $name');
+    print('Age: $age');
+  }
+}
+
+void main() {
+  Employee employee = Employee('Anu', 26);
+
+  employee.display();
+}
+
+
+- Employee is the class.
+- name and age are properties.
+- Employee('Anu', 26) creates an object.
+- Employee(this.name, this.age) is a constructor.
+- display() is a method.
+11. async and await
+These are used for asynchronous operations such as API calls.
+Future<void> fetchData() async {
+  print('Fetching data...');
+
+  await Future.delayed(
+    const Duration(seconds: 2),
+  );
+
+  print('Data received');
+}
+
+void main() async {
+  await fetchData();
+}
+
+
+await waits for an asynchronous operation to complete before continuing. It does not block the entire application.
