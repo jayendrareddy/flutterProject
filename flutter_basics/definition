@@ -1,0 +1,21 @@
+Flutter is an open-source UI toolkit developed by Google for building beautiful, natively compiled applications for mobile, web, and 
+desktop from a single codebase using the Dart programming language.
+
+"Flutter is a framework used to create mobile, web, and desktop applications using a single codebase."
+    - Developed by Google
+    - Uses Dart language
+    - Single codebase for Android, iOS, Web, Windows, macOS, and Linux
+    - Fast development with Hot Reload
+    - Rich collection of widgets for building UI
+
+syntax:
+     import 'package:flutter/material.dart';
+
+          void main() {
+                 runApp(MyApp());
+          }
+
+import → Imports Flutter library.
+main() → Starting point of the app.
+runApp() → Runs the Flutter app.
+MyApp() → Your first widget.
